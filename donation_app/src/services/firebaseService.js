@@ -7,13 +7,13 @@ import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyBbnBRuzPaGdDqE1cxGYXUWRg8u_dj4IeA",
-  authDomain: "donationapp-75a71.firebaseapp.com",
-  projectId: "donationapp-75a71",
-  storageBucket: "donationapp-75a71.appspot.com",
-  messagingSenderId: "63004966777",
-  appId: "1:63004966777:web:2159e3f571cd4649c5b9a8",
-  measurementId: "G-2E3HVRMY9J"
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID,
 };
 
 // Initialize Firebase
