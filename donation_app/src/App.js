@@ -1,5 +1,7 @@
 import React from "react";
+import DonationDistribution from "./components/DonationDistribution";
 import DonationRegistration from "./components/DonationRegistration";
+import DonationReports from "./components/DonationReports";
 
 function App() {
   return (
@@ -9,6 +11,8 @@ function App() {
       </header>
       <main>
         <DonationRegistration />
+        <DonationDistribution />
+        <DonationReports />
       </main>
     </div>
   );
