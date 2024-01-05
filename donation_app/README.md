@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Getting Started with React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -13,6 +13,19 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
+
+Configuration
+Create a .env file in the root of your project (use the .env.example as a template). Fill in the necessary environment variables:
+
+### `env`
+You need to create a .env file to configure firebase before you can run the app
+```
+REACT_APP_API_KEY=your_api_key_here
+REACT_APP_OTHER_SECRET=your_other_secret_here
+```
+Make sure to replace your_api_key_here and your_other_secret_here with your actual API keys and secrets.
+
+
 
 ### `npm test`
 
