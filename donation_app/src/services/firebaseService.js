@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore, collection, addDoc } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -21,5 +21,17 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const analytics = getAnalytics(app);
+
+// Function to add a new donation to the Firestore database
+export const addDonation = async (donationData) => {
+    try {
+      const docRef = await addDoc(collection(db, 'donations'), donationData);
+      console.log('Document written with ID: ', docRef.id);
+      return docRef.id; // Return the new document ID
+    } catch (e) {
+      console.error('Error adding document: ', e);
+      throw e; // Re-throw the error to be handled by the calling component
+    }
+  };
 
 export default db;
