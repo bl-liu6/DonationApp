@@ -28,6 +28,7 @@ export default function DonationDistribution() {
     e.preventDefault();
     try {
       await distributeDonation(distribution);
+      setDistribution({ type: '', amount: 0, date: '' }); // reset the form
       alert('Distribution logged successfully!');
     } catch (error) {
       console.error('Error logging distribution: ', error);
