@@ -37,40 +37,100 @@ export default function DonationDistribution() {
   };
 
   return (
-    <div>
-      <h2>Log Donation Distribution</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Type of Donation:
-          <select name="type" value={distribution.type} onChange={handleInputChange}>
-            <option value="">Select a donation type</option>
-            {donationTypes.map((type, index) => (
-              <option key={index} value={type}>
-                {type}
-              </option>
-            ))}
-          </select>
-        </label>
-        <label>
-          Amount/Quantity Distributed:
-          <input
-            name="amount"
-            type="number"
-            value={distribution.amount}
-            onChange={handleInputChange}
-          />
-        </label>
-        <label>
-          Date of Distribution:
-          <input
-            name="date"
-            type="date"
-            value={distribution.date}
-            onChange={handleInputChange}
-          />
-        </label>
-        <button type="submit">Log Distribution</button>
-      </form>
+    <div style={styles.container}>
+      <div style={styles.card}>
+        <h2 style={styles.header}>Log Donation Distribution</h2>
+        <form onSubmit={handleSubmit} style={styles.form}>
+          <div style={styles.inputGroup}>
+            <label style={styles.label}>
+              Type of Donation:
+              <select name="type" value={distribution.type} onChange={handleInputChange} style={styles.input}>
+                <option value="">Select a donation type</option>
+                {donationTypes.map((type, index) => (
+                  <option key={index} value={type}>{type}</option>
+                ))}
+              </select>
+            </label>        
+          </div>
+          <div style={styles.inputGroup}>
+            <label style={styles.label}>
+              Amount/Quantity Distributed:
+              <input
+                name="amount"
+                type="number"
+                value={distribution.amount}
+                onChange={handleInputChange}
+                style={styles.input}
+              />
+            </label>        
+          </div>
+          <div style={styles.inputGroup}>
+            <label style={styles.label}>
+              Date of Distribution:
+              <input
+                name="date"
+                type="date"
+                value={distribution.date}
+                onChange={handleInputChange}
+                style={styles.input}
+              />
+            </label>
+          </div>
+          <button type="submit" style={styles.button}>Submit</button>
+        </form>
+      </div>
     </div>
   );
 }
+
+// Reuse the same styles object from the DonationRegistration component
+const styles = {
+    container: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '100%',
+        backgroundColor: 'white',
+    },
+    card: {
+        width: '80%',
+        maxWidth: '500px',
+        backgroundColor: '#4169E1',
+        borderRadius: '10px',
+        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+        padding: '20px',
+        margin: '15px',        
+        color: 'white',
+    },
+    form: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+    },
+    inputGroup: {
+        marginBottom: '15px',
+    },
+    label: {
+        display: 'block',
+        marginBottom: '5px',
+        fontSize: '18px',
+    },
+    input: {
+        fontSize: '16px',
+        padding: '10px',
+        width: '60%',
+        margin: '5px 0',
+    },
+    button: {
+        backgroundColor: '#FFEA00',
+        padding: '10px 20px',
+        fontSize: '18px',
+        cursor: 'pointer',
+        margin: '10px 0',
+        width: '40%',
+    },
+    header: {
+        marginBottom: '20px',
+        fontSize: '24px',
+    }
+};
